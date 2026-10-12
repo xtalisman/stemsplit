@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online Audio Joiner — Merge MP3 &amp; WAV Files | StemSplit</title>
+<meta name="description" content="Combine multiple audio tracks into one seamless file. Free online audio joiner in your browser — no sign-up, no uploads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><rect x='7' y='12' width='3' height='8' rx='1.5' fill='white'/><rect x='12' y='7' width='3' height='18' rx='1.5' fill='white'/><rect x='17' y='10' width='3' height='12' rx='1.5' fill='white'/><rect x='22' y='14' width='3' height='6' rx='1.5' fill='white'/></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="2.5" height="6" rx="1.2" fill="#0a0a12"/><rect x="8.5" y="5" width="2.5" height="14" rx="1.2" fill="#0a0a12"/><rect x="13" y="8" width="2.5" height="8" rx="1.2" fill="#0a0a12"/><rect x="17.5" y="11" width="2.5" height="4" rx="1.2" fill="#0a0a12"/></svg></span>StemSplit</a>
+    <nav class="nav">
+      <a href="index.html">Home</a><a href="studio.html">Studio</a>
+      <div class="nav-drop"><button>Tools ▾</button><div class="drop-menu">
+        <a href="pitch-shifter.html"><strong>Pitch Shifter</strong><span>Raise or lower pitch, tape-style</span></a>
+        <a href="bpm-key-finder.html"><strong>BPM &amp; Key Finder</strong><span>Detect tempo and musical key</span></a>
+        <a href="audio-cutter.html"><strong>Audio Cutter</strong><span>Trim clips on a waveform</span></a>
+        <a href="audio-joiner.html"><strong>Audio Joiner</strong><span>Merge tracks into one file</span></a>
+        <a href="speed-changer.html"><strong>Speed Changer</strong><span>Slow down or speed up audio</span></a>
+      </div></div>
+      <a href="about.html">About</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center"><a class="btn btn-primary btn-sm" href="studio.html">Open Studio</a><button class="mobile-toggle" aria-label="Menu">☰</button></div>
+  </div>
+</header>
+
+<section class="page-hero"><div class="container">
+  <span class="eyebrow">Free audio tool</span>
+  <h1>Audio <span class="grad-text">Joiner</span></h1>
+  <p>Drop in several tracks and stitch them into one continuous file — for mixes, episodes, audiobooks or playlists.</p>
+</div></section>
+
+<section style="padding-bottom:90px"><div class="container"><div class="workspace">
+  <div class="dropzone" id="dropzone">
+    <div class="dropzone-icon">🔗</div><h3>Drop your audio files here</h3>
+    <p>or click to browse — select multiple files at once. They'll join in the order listed below.</p>
+    <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+  </div>
+  <div class="status-msg" id="statusMsg"></div>
+  <div id="workspace" hidden>
+    <div class="track-list" id="trackList"></div>
+    <p id="totalTime" style="font-size:14px;color:var(--muted);margin-bottom:16px"></p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn btn-ghost" id="addMoreBtn">＋ Add more files</button>
+      <button class="btn btn-primary" id="joinPlay">▶ Preview mix</button>
+      <button class="btn btn-ghost" id="joinDownload">⬇ Download joined WAV</button>
+    </div>
+  </div>
+</div>
+<div class="grid-3" style="margin-top:48px">
+  <div class="card"><div class="card-icon">🎙️</div><h3>Podcasts &amp; episodes</h3><p>Merge intro, segments and outro into a single publish-ready file.</p></div>
+  <div class="card"><div class="card-icon">📚</div><h3>Audiobooks &amp; lessons</h3><p>Combine chapter recordings into one seamless listening file.</p></div>
+  <div class="card"><div class="card-icon">🔒</div><h3>Private &amp; free</h3><p>Merging happens locally in your browser — no uploads, no accounts, no watermarks.</p></div>
+</div></div></section>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="2.5" height="6" rx="1.2" fill="#0a0a12"/><rect x="8.5" y="5" width="2.5" height="14" rx="1.2" fill="#0a0a12"/><rect x="13" y="8" width="2.5" height="8" rx="1.2" fill="#0a0a12"/><rect x="17.5" y="11" width="2.5" height="4" rx="1.2" fill="#0a0a12"/></svg></span>StemSplit</a><p>Split songs into vocals and music, and shape audio with free browser tools. Everything runs on your device.</p></div>
+    <div class="footer-col"><h4>Product</h4><a href="studio.html">Stem Splitter Studio</a><a href="index.html#how">How it works</a><a href="index.html#faq">FAQ</a></div>
+    <div class="footer-col"><h4>Tools</h4><a href="pitch-shifter.html">Pitch Shifter</a><a href="bpm-key-finder.html">BPM &amp; Key Finder</a><a href="audio-cutter.html">Audio Cutter</a><a href="audio-joiner.html">Audio Joiner</a><a href="speed-changer.html">Speed Changer</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></div>
+  </div>
+  <div class="footer-bottom"><span>© <span data-year>2026</span> StemSplit. All rights reserved.</span><span>Made for creators, remixers &amp; the endlessly curious.</span></div>
+</div></footer>
+<script src="js/audio-engine.js"></script>
+<script src="js/site.js"></script>
+<script src="js/tools.js"></script>
+<script>StemSplitTools.init('joiner');</script>
+</body></html>
