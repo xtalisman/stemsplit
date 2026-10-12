@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stem Splitter Studio — Free Online Vocal Remover | StemSplit</title>
+<meta name="description" content="Separate any song into vocals and music stems in your browser. Preview each stem, build a custom mix and download lossless WAVs. Free, no sign-up, 100% private.">
+<meta property="og:title" content="StemSplit Studio — Free Vocal Remover & Stem Splitter">
+<meta property="og:description" content="Upload a track, split vocals from music, mix and download — all in your browser.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><rect x='7' y='12' width='3' height='8' rx='1.5' fill='white'/><rect x='12' y='7' width='3' height='18' rx='1.5' fill='white'/><rect x='17' y='10' width='3' height='12' rx='1.5' fill='white'/><rect x='22' y='14' width='3' height='6' rx='1.5' fill='white'/></svg>">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="2.5" height="6" rx="1.2" fill="#0a0a12"/><rect x="8.5" y="5" width="2.5" height="14" rx="1.2" fill="#0a0a12"/><rect x="13" y="8" width="2.5" height="8" rx="1.2" fill="#0a0a12"/><rect x="17.5" y="11" width="2.5" height="4" rx="1.2" fill="#0a0a12"/></svg></span>
+      StemSplit
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="studio.html" class="active">Studio</a>
+      <div class="nav-drop">
+        <button>Tools ▾</button>
+        <div class="drop-menu">
+          <a href="pitch-shifter.html"><strong>Pitch Shifter</strong><span>Raise or lower pitch, tape-style</span></a>
+          <a href="bpm-key-finder.html"><strong>BPM &amp; Key Finder</strong><span>Detect tempo and musical key</span></a>
+          <a href="audio-cutter.html"><strong>Audio Cutter</strong><span>Trim clips on a waveform</span></a>
+          <a href="audio-joiner.html"><strong>Audio Joiner</strong><span>Merge tracks into one file</span></a>
+          <a href="speed-changer.html"><strong>Speed Changer</strong><span>Slow down or speed up audio</span></a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="btn btn-primary btn-sm" href="studio.html">Open Studio</a>
+      <button class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Stem Splitter Studio</span>
+    <h1>Separate <span class="grad-text">vocals</span> from <span class="grad-text">music</span></h1>
+    <p>Upload a song or a video, and get clean vocal and instrumental stems in seconds — processed entirely on your device.</p>
+  </div>
+</section>
+
+<section style="padding-bottom:90px">
+  <div class="container">
+    <div class="workspace">
+      <div class="dropzone" id="dropzone">
+        <div class="dropzone-icon">🎵</div>
+        <h3>Drop your audio or video file here</h3>
+        <p>or click to browse your files. Separation starts automatically after decoding.</p>
+        <p class="formats">MP3 · WAV · M4A · OGG · FLAC · MP4 · WebM · MOV — up to 10 minutes</p>
+        <input type="file" id="fileInput" accept="audio/*,video/*" hidden>
+      </div>
+
+      <div class="or-row">or</div>
+      <div class="url-row">
+        <input type="text" id="urlInput" placeholder="Paste a direct link to an audio file (https://…)">
+        <button class="btn btn-ghost" id="urlBtn">Load URL</button>
+      </div>
+      <div class="or-row">or</div>
+      <button class="btn btn-ghost btn-block" id="recordBtn">🎙️ Record audio</button>
+
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-label"><span id="progressLabel">Working…</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <div class="status-msg" id="statusMsg"></div>
+
+      <div id="studioWorkspace" hidden>
+        <div class="file-chip" id="fileChip" style="margin-top:20px">
+          <span class="f-icon">🎧</span>
+          <span class="f-meta"><span class="f-name" id="fileName"></span><span class="f-sub" id="fileMeta"></span></span>
+          <button id="newFileBtn" title="Load a different file">↺ New file</button>
+        </div>
+
+        <div class="stem-tabs">
+          <button class="stem-tab active" data-stem="original"><span class="swatch" style="background:#22d3ee"></span>Original<small>full mix</small></button>
+          <button class="stem-tab" data-stem="vocals"><span class="swatch" style="background:#8b5cf6"></span>Vocals<small>voice only</small></button>
+          <button class="stem-tab" data-stem="music"><span class="swatch" style="background:#fbbf24"></span>Music<small>instrumental</small></button>
+          <button class="stem-tab" data-stem="custom"><span class="swatch" style="background:#34d399"></span>Custom Mix<small>your blend</small></button>
+        </div>
+
+        <div class="transport">
+          <button class="play-btn" id="playBtn">▶</button>
+          <span class="time-read" id="timeRead">0:00 / 0:00</span>
+          <span style="font-size:13px;color:var(--muted-2)">Click the waveform to seek · switch stems mid-playback</span>
+        </div>
+
+        <div class="waveform-wrap">
+          <canvas class="waveform" id="waveCanvas"></canvas>
+          <div class="wave-legend">
+            <span><i style="background:#22d3ee"></i>Original</span>
+            <span><i style="background:#8b5cf6"></i>Vocals</span>
+            <span><i style="background:#fbbf24"></i>Music</span>
+            <span><i style="background:#34d399"></i>Custom mix</span>
+          </div>
+        </div>
+
+        <div class="mixer" id="mixerSection" style="display:none">
+          <h3>Custom Mixer</h3>
+          <p>Rebalance the two stems to taste. Your blend plays live and downloads exactly as you hear it.</p>
+          <div class="slider-row">
+            <label><span class="swatch" style="background:#8b5cf6"></span>Vocals</label>
+            <input type="range" id="mixVocals" min="0" max="100" value="80">
+            <output id="mixVocalsVal">80%</output>
+          </div>
+          <div class="slider-row">
+            <label><span class="swatch" style="background:#fbbf24"></span>Music</label>
+            <input type="range" id="mixMusic" min="0" max="100" value="80">
+            <output id="mixMusicVal">80%</output>
+          </div>
+        </div>
+
+        <h3 style="font-family:var(--font-display);font-size:18px;margin:28px 0 4px">Download</h3>
+        <p style="color:var(--muted);font-size:14px;margin-bottom:6px">Lossless 16-bit WAV at the original sample rate.</p>
+        <div class="download-grid">
+          <button class="dl-btn" id="dlVocals"><span class="dl-icon">🎤</span><span>Vocals stem<small>voice only · WAV</small></span></button>
+          <button class="dl-btn" id="dlMusic"><span class="dl-icon">🎸</span><span>Music stem<small>instrumental · WAV</small></span></button>
+          <button class="dl-btn" id="dlMix"><span class="dl-icon">🎚️</span><span>Custom mix<small>your blend · WAV</small></span></button>
+          <button class="dl-btn" id="dlOriginal"><span class="dl-icon">💿</span><span>Original<small>untouched · WAV</small></span></button>
+          <button class="dl-btn" id="dlAll"><span class="dl-icon">📦</span><span>All stems<small>vocals + music + original · ZIP</small></span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:48px">
+      <div class="card"><div class="card-icon">🎤</div><h3>The Vocals stem</h3><p>The centered signal of your mix — typically the lead vocal. Ideal for acapellas, remixes and mashups.</p></div>
+      <div class="card"><div class="card-icon">🎸</div><h3>The Music stem</h3><p>Everything panned wide: drums, bass, guitars, synths. Your instant karaoke or practice backing track.</p></div>
+      <div class="card"><div class="card-icon">🔒</div><h3>Private by design</h3><p>Separation runs 100% in your browser using center-channel processing. No uploads, no servers, no trace.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="2.5" height="6" rx="1.2" fill="#0a0a12"/><rect x="8.5" y="5" width="2.5" height="14" rx="1.2" fill="#0a0a12"/><rect x="13" y="8" width="2.5" height="8" rx="1.2" fill="#0a0a12"/><rect x="17.5" y="11" width="2.5" height="4" rx="1.2" fill="#0a0a12"/></svg></span>StemSplit</a>
+        <p>Split songs into vocals and music, and shape audio with free browser tools. Everything runs on your device — your files never leave your computer.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="studio.html">Stem Splitter Studio</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="pitch-shifter.html">Pitch Shifter</a>
+        <a href="bpm-key-finder.html">BPM &amp; Key Finder</a>
+        <a href="audio-cutter.html">Audio Cutter</a>
+        <a href="audio-joiner.html">Audio Joiner</a>
+        <a href="speed-changer.html">Speed Changer</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> StemSplit. All rights reserved.</span>
+      <span>Made for creators, remixers &amp; the endlessly curious.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/audio-engine.js"></script>
+<script src="js/site.js"></script>
+<script src="js/studio.js"></script>
+</body>
+</html>

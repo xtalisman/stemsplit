@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StemSplit — Free Vocal Remover & Stem Splitter Online (No Sign-Up)</title>
+<meta name="description" content="Split any song into vocals and music right in your browser. Free vocal remover, karaoke maker, custom stem mixer and 5 bonus audio tools. No sign-up — your files never leave your device.">
+<meta property="og:title" content="StemSplit — Free Vocal Remover & Stem Splitter">
+<meta property="og:description" content="Separate vocals from music, preview each stem, build a custom mix and download — all in your browser, all free.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><rect x='7' y='12' width='3' height='8' rx='1.5' fill='white'/><rect x='12' y='7' width='3' height='18' rx='1.5' fill='white'/><rect x='17' y='10' width='3' height='12' rx='1.5' fill='white'/><rect x='22' y='14' width='3' height='6' rx='1.5' fill='white'/></svg>">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"StemSplit","applicationCategory":"MultimediaApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free in-browser vocal remover and stem splitter with pitch, tempo, cutter and joiner tools."}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="2.5" height="6" rx="1.2" fill="#0a0a12"/><rect x="8.5" y="5" width="2.5" height="14" rx="1.2" fill="#0a0a12"/><rect x="13" y="8" width="2.5" height="8" rx="1.2" fill="#0a0a12"/><rect x="17.5" y="11" width="2.5" height="4" rx="1.2" fill="#0a0a12"/></svg></span>
+      StemSplit
+    </a>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="studio.html">Studio</a>
+      <div class="nav-drop">
+        <button>Tools ▾</button>
+        <div class="drop-menu">
+          <a href="pitch-shifter.html"><strong>Pitch Shifter</strong><span>Raise or lower pitch, tape-style</span></a>
+          <a href="bpm-key-finder.html"><strong>BPM &amp; Key Finder</strong><span>Detect tempo and musical key</span></a>
+          <a href="audio-cutter.html"><strong>Audio Cutter</strong><span>Trim clips on a waveform</span></a>
+          <a href="audio-joiner.html"><strong>Audio Joiner</strong><span>Merge tracks into one file</span></a>
+          <a href="speed-changer.html"><strong>Speed Changer</strong><span>Slow down or speed up audio</span></a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="btn btn-primary btn-sm" href="studio.html">Open Studio</a>
+      <button class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="hero-grid-bg"></div></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-badge"><span class="pulse-dot"></span> Free · No sign-up · Files stay on your device</div>
+      <h1 class="hero-title">Pull any song apart into <span class="grad-text">vocals &amp; music.</span></h1>
+      <p class="hero-sub">Drop in a track and StemSplit separates the voice from the backing in seconds — right in your browser. Preview each stem, build your own mix, and download studio-quality WAVs.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary btn-lg" href="studio.html">🎚️ Split a song now</a>
+        <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
+      </div>
+      <p class="hero-note"><b>Private by design:</b> everything is processed locally — nothing is ever uploaded to a server.</p>
+    </div>
+    <div class="hero-visual">
+      <div class="studio-mock">
+        <div class="mock-bar"><span class="mock-dot" style="background:#f87171"></span><span class="mock-dot" style="background:#fbbf24"></span><span class="mock-dot" style="background:#34d399"></span></div>
+        <div class="mock-body">
+          <div class="mock-stems">
+            <div class="mock-stem"><span class="swatch" style="background:#22d3ee"></span>Original<small>full mix</small></div>
+            <div class="mock-stem"><span class="swatch" style="background:#8b5cf6"></span>Vocals<small>voice only</small></div>
+            <div class="mock-stem"><span class="swatch" style="background:#fbbf24"></span>Music<small>karaoke-ready</small></div>
+            <div class="mock-stem"><span class="swatch" style="background:#34d399"></span>Custom mix<small>your blend</small></div>
+          </div>
+          <div class="mock-wave">
+            <svg viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0,60 Q10,20 20,60 T40,60 T60,60 Q70,95 80,60 T100,60 T120,60 Q130,30 140,60 T160,60 T180,60 Q190,90 200,60 T220,60 T240,60 Q250,25 260,60 T280,60 T300,60 Q310,92 320,60 T340,60 T360,60 Q370,35 380,60 T400,60" stroke="#8b5cf6" stroke-width="2.5" fill="none" opacity="0.9"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-band">
+  <div class="container stats">
+    <div><div class="stat-num">100%</div><div class="stat-label">on-device processing — zero uploads</div></div>
+    <div><div class="stat-num">6</div><div class="stat-label">free audio tools in one place</div></div>
+    <div><div class="stat-num">0</div><div class="stat-label">sign-ups, accounts or watermarks</div></div>
+    <div><div class="stat-num">WAV</div><div class="stat-label">lossless downloads of every stem</div></div>
+  </div>
+</div>
+
+<section class="section" id="how">
+  <div class="container">
+    <div class="center"><span class="eyebrow">How it works</span>
+      <h2 class="section-title">From full song to separate stems<br>in three steps</h2>
+      <p class="section-sub">No installs, no accounts, no waiting in a render queue.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><h3>Drop in your track</h3><p>Upload an MP3, WAV, M4A or even a video file — or hit record and capture audio live. Your file is decoded instantly on your own device.</p></div>
+      <div class="step"><div class="step-num">02</div><h3>Split the stems</h3><p>StemSplit pulls the recording apart into a <strong>Vocals</strong> stem and a <strong>Music</strong> stem using center-channel separation, tuned for real-world mixes.</p></div>
+      <div class="step"><div class="step-num">03</div><h3>Preview, mix &amp; download</h3><p>A/B each stem on a shared timeline, rebalance them in the Custom Mixer, then download individual WAVs or grab every stem as a zip.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="center"><span class="eyebrow">Features</span>
+      <h2 class="section-title">Everything you need to take songs apart</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-icon">🎤</div><h3>Vocal isolation</h3><p>Lift the lead vocal out of a finished mix for acapellas, remixes, mashups or detailed listening.</p></div>
+      <div class="card"><div class="card-icon">🎸</div><h3>Karaoke-ready music stem</h3><p>Strip the centered vocal to get a clean instrumental backing track for practice or performance.</p></div>
+      <div class="card"><div class="card-icon">🎚️</div><h3>Custom stem mixer</h3><p>Don't want all-or-nothing? Dial the vocals and music to any balance and preview your blend live.</p></div>
+      <div class="card"><div class="card-icon">⚡</div><h3>Instant, unlimited previews</h3><p>Switch between Original, Vocals, Music and your Custom Mix mid-playback — no re-rendering, no waiting.</p></div>
+      <div class="card"><div class="card-icon">💾</div><h3>One-click WAV downloads</h3><p>Export any stem as a lossless WAV, download your custom mix, or grab all stems in a single zip.</p></div>
+      <div class="card"><div class="card-icon">🔒</div><h3>Private by design</h3><p>Separation happens 100% in your browser. Your audio is never uploaded, stored or seen by anyone.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="center"><span class="eyebrow">Bonus toolkit</span>
+      <h2 class="section-title">Five more free audio tools</h2>
+      <p class="section-sub">Every tool runs in your browser with the same no-upload, no-sign-up promise.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card tool-card"><div class="card-icon">🎹</div><h3>Pitch Shifter</h3><p>Transpose any recording up or down by semitones — great for matching a singer's range.</p><a class="btn btn-ghost btn-sm" href="pitch-shifter.html" style="margin-top:18px">Open tool →</a></div>
+      <div class="card tool-card"><div class="card-icon">🥁</div><h3>BPM &amp; Key Finder</h3><p>Detect a track's tempo and musical key automatically for DJ sets and remixes.</p><a class="btn btn-ghost btn-sm" href="bpm-key-finder.html" style="margin-top:18px">Open tool →</a></div>
+      <div class="card tool-card"><div class="card-icon">✂️</div><h3>Audio Cutter</h3><p>Select any region on the waveform and trim it out — perfect for samples and clips.</p><a class="btn btn-ghost btn-sm" href="audio-cutter.html" style="margin-top:18px">Open tool →</a></div>
+      <div class="card tool-card"><div class="card-icon">🔗</div><h3>Audio Joiner</h3><p>Stitch multiple tracks into one seamless file for mixes, episodes or playlists.</p><a class="btn btn-ghost btn-sm" href="audio-joiner.html" style="margin-top:18px">Open tool →</a></div>
+      <div class="card tool-card"><div class="card-icon">⏩</div><h3>Speed Changer</h3><p>Slow down a tricky solo to learn it, or speed up a voice memo — from 0.25× to 2.5×.</p><a class="btn btn-ghost btn-sm" href="speed-changer.html" style="margin-top:18px">Open tool →</a></div>
+      <div class="card tool-card" style="background:var(--grad-soft);border-color:rgba(139,92,246,.35)"><div class="card-icon">🎚️</div><h3>Stem Splitter Studio</h3><p>The flagship: separate vocals from music, mix your own blend, download every stem.</p><a class="btn btn-primary btn-sm" href="studio.html" style="margin-top:18px">Open studio →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="center"><span class="eyebrow">Use cases</span>
+      <h2 class="section-title">Made for how you actually use audio</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card usecase"><div class="card-icon">🎙️</div><div><h3>Creators &amp; video editors</h3><p>Pull dialogue or vocals away from background music before cutting clips, then drop in a track you're licensed to use.</p></div></div>
+      <div class="card usecase"><div class="card-icon">🎤</div><div><h3>Singers &amp; karaoke nights</h3><p>Turn any favorite song into a backing track in seconds — no hunting for official instrumentals.</p></div></div>
+      <div class="card usecase"><div class="card-icon">🎧</div><div><h3>Remixers, DJs &amp; producers</h3><p>Grab acapellas for mashups, find the key and BPM of any track, and prep material for your next set.</p></div></div>
+      <div class="card usecase"><div class="card-icon">🎓</div><div><h3>Students &amp; transcribers</h3><p>Isolate the voice in a lesson, interview or podcast recording to hear every word clearly.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0" id="faq">
+  <div class="container">
+    <div class="center"><span class="eyebrow">FAQ</span>
+      <h2 class="section-title">Questions, answered</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q">How does StemSplit separate vocals from music?<span class="fx">+</span></button><div class="faq-a"><p>StemSplit uses center-channel (mid/side) separation: in most stereo mixes the lead vocal sits in the center while instruments spread wide. We extract the center as the Vocals stem and the wide signal as the Music stem — entirely on your device, in seconds.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Is it really free? What's the catch?<span class="fx">+</span></button><div class="faq-a"><p>Yes — every tool is free with no account, no watermark and no download limits. Because all processing happens in your browser, there are no server costs to pass on to you.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Are my files uploaded anywhere?<span class="fx">+</span></button><div class="faq-a"><p>No. Your audio never leaves your computer. Decoding, separation, analysis and rendering all run locally in your browser tab, and nothing is stored on any server.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Which file formats can I use?<span class="fx">+</span></button><div class="faq-a"><p>MP3, WAV, M4A, OGG, FLAC and most video files (MP4, WebM, MOV) — the audio track is extracted automatically. Files up to 10 minutes long work best in the browser version.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How good is the separation quality?<span class="fx">+</span></button><div class="faq-a"><p>Center-channel separation works beautifully on typical commercial mixes where the vocal is centered. Results vary with the mix: heavily processed, mono, or off-center vocals separate less cleanly. Try the Custom Mixer to find the blend that works for your track.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Can I use the separated stems commercially?<span class="fx">+</span></button><div class="faq-a"><p>StemSplit doesn't change who owns the original recording. You may only use separated audio in ways your rights to the source material allow — for example, your own recordings, licensed tracks, or royalty-free music.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Does it work on my phone?<span class="fx">+</span></button><div class="faq-a"><p>Yes — the Studio and all tools run in any modern mobile browser. For very long files, a desktop browser will feel snappier.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What audio quality do downloads have?<span class="fx">+</span></button><div class="faq-a"><p>All downloads are 16-bit WAV at your file's original sample rate — lossless, ready for any DAW or video editor.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Ready to hear what's inside your music?</h2>
+      <p>Split your first track in under a minute. Free forever, private by design.</p>
+      <a class="btn btn-primary btn-lg" href="studio.html">🎚️ Open the Studio</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="2.5" height="6" rx="1.2" fill="#0a0a12"/><rect x="8.5" y="5" width="2.5" height="14" rx="1.2" fill="#0a0a12"/><rect x="13" y="8" width="2.5" height="8" rx="1.2" fill="#0a0a12"/><rect x="17.5" y="11" width="2.5" height="4" rx="1.2" fill="#0a0a12"/></svg></span>StemSplit</a>
+        <p>Split songs into vocals and music, and shape audio with free browser tools. Everything runs on your device — your files never leave your computer.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="studio.html">Stem Splitter Studio</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="pitch-shifter.html">Pitch Shifter</a>
+        <a href="bpm-key-finder.html">BPM &amp; Key Finder</a>
+        <a href="audio-cutter.html">Audio Cutter</a>
+        <a href="audio-joiner.html">Audio Joiner</a>
+        <a href="speed-changer.html">Speed Changer</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> StemSplit. All rights reserved.</span>
+      <span>Made for creators, remixers &amp; the endlessly curious.</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How does StemSplit separate vocals from music?","acceptedAnswer":{"@type":"Answer","text":"StemSplit uses center-channel (mid/side) separation in your browser: the centered lead vocal is extracted as the Vocals stem and the wide signal as the Music stem."}},
+{"@type":"Question","name":"Is StemSplit really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every tool is free with no account, no watermark and no download limits."}},
+{"@type":"Question","name":"Are my files uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens locally in your browser; audio is never uploaded or stored on a server."}},
+{"@type":"Question","name":"Which file formats can I use?","acceptedAnswer":{"@type":"Answer","text":"MP3, WAV, M4A, OGG, FLAC and most video files (MP4, WebM, MOV). Files up to 10 minutes work best."}}
+]}
+</script>
+<script src="js/site.js"></script>
+</body>
+</html>
